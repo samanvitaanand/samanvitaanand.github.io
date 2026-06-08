@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0f;
-            --surface: #13131a;
-            --accent: #6ee7f7;
-            --accent2: #f7a6e0;
-            --text: #f0f0f5;
-            --muted: #7a7a8a;
-            --border: rgba(110, 231, 247, 0.15);
+            --bg: #fafaf7;
+            --surface: #ffffff;
+            --accent: #2563eb;
+            --accent2: #8b5cf6;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: rgba(37, 99, 235, 0.12);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -279,7 +279,116 @@
 
         /* Projects */
         .projects-section { background: var(--surface); }
+        
+        .projects-section{
+            background:#f5f7fa;
+        }
 
+        .projects-grid{
+            display:flex;
+            flex-direction:column;
+            gap:3rem;
+            max-width:1100px;
+        }
+
+        .project-card{
+            background:white;
+            border-radius:24px;
+            overflow:hidden;
+            border:1px solid #e5e7eb;
+            box-shadow:0 15px 40px rgba(0,0,0,.05);
+            transition:all .3s ease;
+        }
+
+        .project-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 25px 60px rgba(0,0,0,.08);
+        }
+
+        .project-image{
+            width:100%;
+            height:500px;
+            overflow:hidden;
+            background:#eef2f7;
+        }
+
+        .project-image img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .project-content{
+            padding:2rem;
+        }
+
+        .project-number{
+            color:#2563eb;
+            font-size:.85rem;
+            font-weight:600;
+            letter-spacing:.15em;
+            margin-bottom:.5rem;
+        }
+
+        .project-title{
+            font-size:2rem;
+            margin-bottom:1rem;
+            color:#111827;
+        }
+
+        .project-desc{
+            color:#4b5563;
+            line-height:1.8;
+            margin-bottom:1.5rem;
+        }
+
+        .project-highlights{
+            margin-bottom:1.5rem;
+        }
+
+        .project-highlights li{
+            margin-bottom:.5rem;
+            color:#374151;
+        }
+
+        .project-tech{
+            display:flex;
+            flex-wrap:wrap;
+            gap:.5rem;
+            margin-bottom:1.5rem;
+        }
+
+        .tech-tag{
+            background:#eff6ff;
+            color:#2563eb;
+            padding:.4rem .8rem;
+            border-radius:999px;
+            font-size:.8rem;
+            font-weight:500;
+        }
+
+        .project-links{
+            display:flex;
+            gap:1rem;
+            flex-wrap:wrap;
+        }
+
+        .project-link{
+            text-decoration:none;
+            padding:.8rem 1.4rem;
+            border-radius:999px;
+            border:1px solid #d1d5db;
+            color:#111827;
+            font-weight:500;
+            transition:.25s;
+        }
+
+        .project-link:hover{
+            background:#2563eb;
+            color:white;
+            border-color:#2563eb;
+        }
+/* 
         .project-card {
             background: var(--bg);
             border: 1px solid var(--border);
@@ -357,7 +466,7 @@
             background: var(--accent);
             border-color: var(--accent);
             color: var(--bg);
-        }
+        } */
 
         .project-arrow {
             font-size: 3rem;
@@ -537,7 +646,125 @@
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- <!-- Projects -->
+    <section id="projects" class="projects-section">
+    <div class="fade-in">
+
+        <div class="section-label">Projects</div>
+        <h2>Featured Work</h2>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+
+                <div class="project-image">
+                    <img src="images/british-airways-dashboard.png"
+                         alt="British Airways Dashboard">
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">PROJECT 01</div>
+
+                    <h3 class="project-title">
+                        British Airways Review Dashboard
+                    </h3>
+
+                    <p class="project-desc">
+                        Built an interactive Tableau dashboard analyzing
+                        thousands of airline reviews. Users can filter
+                        ratings by traveler type, seat class, continent,
+                        and review metrics while exploring trends over time,
+                        geographic patterns, and aircraft performance.
+                    </p>
+
+                    <ul class="project-highlights">
+                        <li>Interactive KPI cards and filters</li>
+                        <li>Global review sentiment map</li>
+                        <li>Aircraft performance comparison</li>
+                        <li>Time-series rating analysis</li>
+                    </ul>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Dashboard Design</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            View Dashboard →
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+
+                <div class="project-image">
+                    <img src="images/seattle-bike-share.png"
+                         alt="Seattle Bike Share Dashboard">
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">PROJECT 02</div>
+
+                    <h3 class="project-title">
+                        Seattle Bike Share Analytics Platform
+                    </h3>
+
+                    <p class="project-desc">
+                        Developed a multi-page Streamlit application
+                        exploring Seattle's Pronto bike share system.
+                        The platform combines geospatial visualization,
+                        weather analysis, ridership trends, and station-level
+                        analytics into a single interactive experience.
+                    </p>
+
+                    <ul class="project-highlights">
+                        <li>Interactive station map with Folium</li>
+                        <li>Weather vs. ridership analysis</li>
+                        <li>Station-level performance dashboard</li>
+                        <li>Exploration of 300,000+ trip records</li>
+                    </ul>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Plotly</span>
+                        <span class="tech-tag">Folium</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">GeoPandas</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://seattle-bikeshare-dashboard-nckftpaa7r8h2sqixav6ha.streamlit.app"
+                           target="_blank"
+                           class="project-link">
+                            View Live App →
+                        </a>
+
+                        <a href="https://github.com/samanvitaanand"
+                           target="_blank"
+                           class="project-link">
+                            GitHub →
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
     <section id="projects" class="projects-section">
         <div class="fade-in">
             <div class="section-label">Projects</div>
@@ -560,7 +787,7 @@
                 <div class="project-arrow">→</div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Skills -->
     <section id="skills">
