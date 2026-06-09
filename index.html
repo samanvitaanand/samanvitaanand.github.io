@@ -26,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated background */
         body::before {
             content: '';
             position: fixed;
@@ -35,8 +34,8 @@
             width: 200%;
             height: 200%;
             background: 
-                radial-gradient(ellipse at 20% 20%, rgba(110, 231, 247, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(247, 166, 224, 0.06) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 20%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
             animation: drift 20s ease-in-out infinite alternate;
             pointer-events: none;
             z-index: 0;
@@ -57,7 +56,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: rgba(10, 10, 15, 0.8);
+            background: rgba(250, 250, 247, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
@@ -108,7 +107,7 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--accent);
-            border: 1px solid var(--border);
+            border: 1px solid rgba(37, 99, 235, 0.3);
             padding: 0.4rem 1rem;
             border-radius: 100px;
             margin-bottom: 2rem;
@@ -121,6 +120,7 @@
             line-height: 1.05;
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
+            color: var(--text);
         }
 
         h1 span {
@@ -160,7 +160,7 @@
             align-items: center;
             gap: 0.75rem;
             background: var(--accent);
-            color: var(--bg);
+            color: white;
             text-decoration: none;
             padding: 0.9rem 2rem;
             border-radius: 100px;
@@ -172,10 +172,9 @@
 
         .hero-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(110, 231, 247, 0.3);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
         }
 
-        /* Scroll indicator */
         .scroll-hint {
             position: absolute;
             bottom: 3rem;
@@ -225,6 +224,7 @@
             font-weight: 700;
             margin-bottom: 3rem;
             letter-spacing: -0.01em;
+            color: var(--text);
         }
 
         /* About */
@@ -278,201 +278,246 @@
         }
 
         /* Projects */
-        .projects-section { background: var(--surface); }
-        
-        .projects-section{
-            background:#f5f7fa;
+        .projects-section { background: #f5f7fa; }
+
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1100px;
         }
 
-        .projects-grid{
-            display:flex;
-            flex-direction:column;
-            gap:3rem;
-            max-width:1100px;
-        }
-
-        .project-card{
-            background:white;
-            border-radius:24px;
-            overflow:hidden;
-            border:1px solid #e5e7eb;
-            box-shadow:0 15px 40px rgba(0,0,0,.05);
-            transition:all .3s ease;
-        }
-
-        .project-card:hover{
-            transform:translateY(-6px);
-            box-shadow:0 25px 60px rgba(0,0,0,.08);
-        }
-
-        .project-image{
-            width:100%;
-            height:500px;
-            overflow:hidden;
-            background:#eef2f7;
-        }
-
-        .project-image img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-        }
-
-        .project-content{
-            padding:2rem;
-        }
-
-        .project-number{
-            color:#2563eb;
-            font-size:.85rem;
-            font-weight:600;
-            letter-spacing:.15em;
-            margin-bottom:.5rem;
-        }
-
-        .project-title{
-            font-size:2rem;
-            margin-bottom:1rem;
-            color:#111827;
-        }
-
-        .project-desc{
-            color:#4b5563;
-            line-height:1.8;
-            margin-bottom:1.5rem;
-        }
-
-        .project-highlights{
-            margin-bottom:1.5rem;
-        }
-
-        .project-highlights li{
-            margin-bottom:.5rem;
-            color:#374151;
-        }
-
-        .project-tech{
-            display:flex;
-            flex-wrap:wrap;
-            gap:.5rem;
-            margin-bottom:1.5rem;
-        }
-
-        .tech-tag{
-            background:#eff6ff;
-            color:#2563eb;
-            padding:.4rem .8rem;
-            border-radius:999px;
-            font-size:.8rem;
-            font-weight:500;
-        }
-
-        .project-links{
-            display:flex;
-            gap:1rem;
-            flex-wrap:wrap;
-        }
-
-        .project-link{
-            text-decoration:none;
-            padding:.8rem 1.4rem;
-            border-radius:999px;
-            border:1px solid #d1d5db;
-            color:#111827;
-            font-weight:500;
-            transition:.25s;
-        }
-
-        .project-link:hover{
-            background:#2563eb;
-            color:white;
-            border-color:#2563eb;
-        }
-/* 
         .project-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: start;
-            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            max-width: 900px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 15px 40px rgba(0,0,0,.05);
+            transition: all .3s ease;
         }
 
         .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(110, 231, 247, 0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 25px 60px rgba(0,0,0,.08);
+        }
+
+        /* ===== PROJECT IMAGES FIX ===== */
+        /* =========================
+        FIXED PROJECT IMAGE LAYOUT
+        ========================= */
+
+        /* Card stays normal flow */
+        .project-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 15px 40px rgba(0,0,0,.05);
+            transition: all .3s ease;
+        }
+
+        /* IMAGE BLOCK = fixed visual canvas */
+        .project-image-single {
+            width: 100%;
+            height: 420px;        /* IMPORTANT: fixed height works better for dashboards */
+            background: #fff;
+            overflow: hidden;
+        }
+
+        /* SINGLE IMAGE FIT */
+        .project-image-single img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* GALLERY BLOCK */
+        .project-image-gallery {
+            width: 100%;
+            height: 420px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        /* GALLERY IMAGES */
+        .project-image-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+            display: block;
+        }
+
+
+
+        /* Project 1 — single image, zoomed out (object-fit: contain) */
+        /*.project-image-single {
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            background: #eef2f7;
+            cursor: pointer;
+        }
+
+        .project-image-single img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* zoomed out, shows full image */
+           /* object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image-single:hover img {
+            transform: scale(1.02);
+        } */
+
+        /* Project 2 — horizontal scrolling gallery */
+        /* .project-image-gallery {
+            width: 100%;
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 1.5rem;
+            background: #eef2f7;
+            scrollbar-width: thin;
+            scrollbar-color: #d1d5db transparent;
+        }
+
+        .project-image-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .project-image-gallery::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .project-image-gallery::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 100px;
+        }
+
+        .project-image-gallery img {
+            height: 200px;
+            width: auto;
+            flex-shrink: 0;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid #e5e7eb;
+        } */
+
+        .project-content {
+            padding: 2rem;
         }
 
         .project-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 0.85rem;
             color: var(--accent);
-            letter-spacing: 0.1em;
-            margin-bottom: 0.75rem;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .15em;
+            margin-bottom: .5rem;
         }
 
-        h3 {
+        .project-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
 
         .project-desc {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            color: #4b5563;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
+        }
+
+        .project-highlights {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .project-highlights li {
+            margin-bottom: .5rem;
+            color: #374151;
+            font-size: 0.95rem;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: .5rem;
             margin-bottom: 1.5rem;
         }
 
         .tech-tag {
-            background: rgba(110, 231, 247, 0.08);
-            border: 1px solid rgba(110, 231, 247, 0.2);
+            background: #eff6ff;
             color: var(--accent);
-            padding: 0.3rem 0.8rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
+            padding: .4rem .8rem;
+            border-radius: 999px;
+            font-size: .8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text);
             text-decoration: none;
-            font-size: 0.85rem;
+            padding: .8rem 1.4rem;
+            border-radius: 999px;
+            border: 1px solid #d1d5db;
+            color: var(--text);
             font-weight: 500;
-            border: 1px solid var(--border);
-            padding: 0.6rem 1.2rem;
-            border-radius: 100px;
-            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            font-size: 0.9rem;
+            transition: .25s;
         }
 
         .project-link:hover {
             background: var(--accent);
+            color: white;
             border-color: var(--accent);
-            color: var(--bg);
-        } */
+        }
 
-        .project-arrow {
-            font-size: 3rem;
-            color: var(--border);
-            font-family: 'Playfair Display', serif;
-            align-self: center;
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
         }
 
         /* Skills */
@@ -572,7 +617,6 @@
             z-index: 1;
         }
 
-        /* Fade in on scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -586,6 +630,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
 
     <nav>
         <div class="nav-logo">SA</div>
@@ -621,16 +671,16 @@
             <h2>Passionate about data,<br>driven by curiosity</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>I'm a Data Science student with a passion for using data to solve real-world problems. I love the full pipeline — from wrangling messy datasets to building interactive tools that make insights accessible to everyone.</p>
+                    <p>I'm a Data Science student with a passion for using data to solve real-world problems. I enjoy wrangling messy datasets to building interactive tools that make insights accessible to everyone.</p>
                     <p>My work spans machine learning, predictive analytics, and data visualization. I'm always looking for opportunities to apply these skills in meaningful, impactful ways.</p>
                 </div>
                 <div class="stats">
                     <div class="stat-card">
                         <div class="stat-number">4+</div>
-                        <div class="stat-label">Dashboard Pages Built</div>
+                        <div class="stat-label">Data Analytics Projects</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">300k+</div>
+                        <div class="stat-number">700k+</div>
                         <div class="stat-label">Data Points Analyzed</div>
                     </div>
                     <div class="stat-card">
@@ -646,170 +696,76 @@
         </div>
     </section>
 
-    <!-- <!-- Projects -->
-    <section id="projects" class="projects-section">
-    <div class="fade-in">
-
-        <div class="section-label">Projects</div>
-        <h2>Featured Work</h2>
-
-        <div class="projects-grid">
-
-            <!-- PROJECT 1 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <img src="BritishAirwaysDashboard.png"
-                         alt="British Airways Dashboard">
-                         style="width: 100%; height: auto; border-radius: 12px;">
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-number">PROJECT 01</div>
-
-                    <h3 class="project-title">
-                        British Airways Review Dashboard
-                    </h3>
-
-                    <p class="project-desc">
-                        Built an interactive Tableau dashboard analyzing
-                        thousands of airline reviews. Users can filter
-                        ratings by traveler type, seat class, continent,
-                        and review metrics while exploring trends over time,
-                        geographic patterns, and aircraft performance.
-                    </p>
-
-                    <ul class="project-highlights">
-                        <li>Interactive KPI cards and filters</li>
-                        <li>Global review sentiment map</li>
-                        <li>Aircraft performance comparison</li>
-                        <li>Time-series rating analysis</li>
-                    </ul>
-
-                    <div class="project-tech">
-                        <span class="tech-tag">Tableau</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Dashboard Design</span>
-                        <span class="tech-tag">Analytics</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            View Dashboard →
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- PROJECT 2 -->
-            <div class="project-card">
-
-                <!-- <div class="project-image">
-                    <img src="images/seattle-bike-share.png"
-                         alt="Seattle Bike Share Dashboard">
-                </div> -->
-                
-                <div class="project-image" 
-                    style="display: flex; gap: 16px; overflow-x: auto; padding-bottom: 10px;">
-
-                    <img src="map.png" 
-                         alt="Map View" 
-                         <!-- style="height: 220px; border-radius: 12px;"> -->
-
-                    <img src="trend.png" 
-                         alt="Trend View" 
-                         <!-- style="height: 220px; border-radius: 12px;"> -->
-
-                    <img src="bar.png" 
-                         alt="Bar Chart" 
-                         <!-- style="height: 220px; border-radius: 12px;"> -->
-
-                    <img src="bar1.png" 
-                         alt="Bar Chart 2" 
-                         <!-- style="height: 220px; border-radius: 12px;"> -->
-            </div>
-
-                <div class="project-content">
-
-                    <div class="project-number">PROJECT 02</div>
-
-                    <h3 class="project-title">
-                        Seattle Bike Share Analytics Platform
-                    </h3>
-
-                    <p class="project-desc">
-                        Developed a multi-page Streamlit application
-                        exploring Seattle's Pronto bike share system.
-                        The platform combines geospatial visualization,
-                        weather analysis, ridership trends, and station-level
-                        analytics into a single interactive experience.
-                    </p>
-
-                    <ul class="project-highlights">
-                        <li>Interactive station map with Folium</li>
-                        <li>Weather vs. ridership analysis</li>
-                        <li>Station-level performance dashboard</li>
-                        <li>Exploration of 300,000+ trip records</li>
-                    </ul>
-
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Plotly</span>
-                        <span class="tech-tag">Folium</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">GeoPandas</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://seattle-bikeshare-dashboard-nckftpaa7r8h2sqixav6ha.streamlit.app"
-                           target="_blank"
-                           class="project-link">
-                            View Live App →
-                        </a>
-
-                        <a href="https://github.com/samanvitaanand"
-                           target="_blank"
-                           class="project-link">
-                            GitHub →
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
+    <!-- Projects -->
     <section id="projects" class="projects-section">
         <div class="fade-in">
             <div class="section-label">Projects</div>
-            <h2>Things I've built</h2>
-            <div class="project-card">
-                <div>
-                    <div class="project-number">01</div>
-                    <h3>Seattle Bike Share Dashboard</h3>
-                    <p class="project-desc">An interactive multi-page dashboard exploring Seattle's Pronto bike share network from 2014–2016. Features an interactive station map, trip analytics, weather vs ridership analysis, and a per-station deep dive tool.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Plotly</span>
-                        <span class="tech-tag">Folium</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">GeoPandas</span>
+            <h2>Featured Work</h2>
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <div class="project-image-single" onclick="openLightbox('BritishAirwaysDashboard.png')">
+                        <img src="BritishAirwaysDashboard.png" alt="British Airways Dashboard">
                     </div>
-                    <a href="https://seattle-bikeshare-dashboard-nckftpaa7r8h2sqixav6ha.streamlit.app" target="_blank" class="project-link">View Live App →</a>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 01</div>
+                        <h3 class="project-title">British Airways Review Dashboard</h3>
+                        <p class="project-desc">Built an interactive Tableau dashboard analyzing thousands of airline reviews. Users can filter ratings by traveler type, seat class, continent, and review metrics while exploring trends over time, geographic patterns, and aircraft performance.</p>
+                        <ul class="project-highlights">
+                            <li>Interactive KPI cards and filters</li>
+                            <li>Global review sentiment map</li>
+                            <li>Aircraft performance comparison</li>
+                            <li>Time-series rating analysis</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Dashboard Design</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Dashboard →</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-arrow">→</div>
+
+                <!-- PROJECT 2 -->
+                <div class="project-card">
+                    <div class="project-image-gallery">
+                        <img src="map.png" alt="Station Map">
+                        <img src="trend.png" alt="Trend View">
+                        <img src="bar.png" alt="Bar Chart">
+                        <img src="bar1.png" alt="Bar Chart 2">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 02</div>
+                        <h3 class="project-title">Seattle Bike Share Analytics Platform</h3>
+                        <p class="project-desc">Developed a multi-page Streamlit application exploring Seattle's Pronto bike share system. The platform combines geospatial visualization, weather analysis, ridership trends, and station analytics into an interactive experience.</p>
+                        <ul class="project-highlights">
+                            <li>Interactive station map with Folium</li>
+                            <li>Weather vs. ridership analysis</li>
+                            <li>Station-level performance dashboard</li>
+                            <li>Exploration of 300,000+ trip records</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Folium</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">GeoPandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://seattle-bikeshare-dashboard-nckftpaa7r8h2sqixav6ha.streamlit.app" target="_blank" class="project-link">View Live App →</a>
+                            <a href="https://github.com/samanvitaanand" target="_blank" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Skills -->
     <section id="skills">
@@ -821,8 +777,9 @@
                     <div class="skill-group-title">Languages</div>
                     <ul class="skill-list">
                         <li>Python</li>
-                        <li>SQL</li>
+                        <li>Java</li>
                         <li>HTML / CSS</li>
+                        <li>SQL</li>
                     </ul>
                 </div>
                 <div class="skill-group">
@@ -837,8 +794,10 @@
                     <div class="skill-group-title">Visualization</div>
                     <ul class="skill-list">
                         <li>Plotly</li>
+                        <li>Tableau</li>
                         <li>Streamlit</li>
                         <li>Folium</li>
+                        <li>Seaborn</li>
                     </ul>
                 </div>
             </div>
@@ -850,11 +809,11 @@
         <div class="fade-in">
             <div class="section-label">Contact</div>
             <h2>Let's work together</h2>
-            <p class="contact-sub">I'm actively looking for data science internships. Feel free to reach out!</p>
+            <!-- <p class="contact-sub">Feel free to reach out!</p> -->
             <div class="contact-links">
                 <a href="https://github.com/samanvitaanand" target="_blank" class="contact-link">GitHub →</a>
-                <a href="mailto:your@email.com" class="contact-link">Email →</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">LinkedIn →</a>
+                <a href="andsamanvita@gmail.com" class="contact-link">Email →</a>
+                <a href="www.linkedin.com/in/samanvita-anand" target="_blank" class="contact-link">LinkedIn →</a>
             </div>
         </div>
     </section>
@@ -870,10 +829,24 @@
                 if (el.isIntersecting) el.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Lightbox for project 1
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('open');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
     </script>
 
 </body>
 </html>
+
 ```
