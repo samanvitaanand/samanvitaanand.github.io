@@ -2,12 +2,12 @@
 
 Welcome to my personal portfolio website.
 
-I am a Computer Science student interested in:
+I am a Data Science student interested in:
 
 - Data Science
 - Machine Learning
 - Data Visualization
-- Software Development
+- Analytics
 
 ## Featured Projects
 
